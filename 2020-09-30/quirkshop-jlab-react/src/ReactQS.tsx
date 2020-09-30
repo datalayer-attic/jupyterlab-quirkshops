@@ -12,7 +12,7 @@ import AnimatedNumber from 'react-animated-number';
 const CounterComponent = (props: {animate: boolean}): JSX.Element => {
   const [counter, setCounter] = useState(0);
   return (
-    <div>
+    <div className='jp-Quirkshop-React'>
       {
         // Conditional rendering.
         props.animate?
@@ -65,9 +65,8 @@ class CounterWidget extends ReactWidget {
   constructor(animate: boolean) {
     super();
     this.animate = animate;
-    this.addClass('jp-Quirkshop-React');
   }
-  render(): JSX.Element {
+  protected render(): JSX.Element {
     return <CounterComponent 
       animate={this.animate}
       />;
