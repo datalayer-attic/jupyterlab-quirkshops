@@ -32,9 +32,10 @@
   },
   "dependencies": {
     "@jupyterlab/application": "^2.0.0",
-    "@jupyterlab/mainmenu": "^2.0.0"
+    "@jupyterlab/mainmenu": "^2.0.0",
+    "react-animated-number": "0.4.4"
   },
-  "devDependencies": {
+  "devDependencies": {  
     "rimraf": "^2.6.1",
     "typescript": "~3.7.0"
   },

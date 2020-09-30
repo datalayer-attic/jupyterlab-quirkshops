@@ -62,7 +62,7 @@ const extension: JupyterFrontEndPlugin<void> = {
         label: 'Open a React Widget in a Tab',
         caption: 'Open a React Widget in a Tab',
         execute: () => {
-          const content = new CounterWidget();
+          const content = new CounterWidget(true);
           const widget = new MainAreaWidget<CounterWidget>({ content });
           widget.title.label = 'Quirkshop React';
           app.shell.add(widget, 'main');
