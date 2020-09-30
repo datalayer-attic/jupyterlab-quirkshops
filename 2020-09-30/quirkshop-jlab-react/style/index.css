@@ -1,12 +1,9 @@
-.jp-quirkshop-Lumino {
-  background-color: AliceBlue;
+.jp-Quirkshop-React {
+  color: var(--jp-ui-font-color1);
+  background: var(--jp-layout-color2);
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-}
-
-.jp-quirkshop-Lumino button {
-  font-size: large;
-}
-
-.jp-quirkshop-LuminoCounter {
-  font-size: xx-large;
 }

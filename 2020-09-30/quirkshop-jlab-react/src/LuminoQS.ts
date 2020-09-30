@@ -1,6 +1,6 @@
-import { Panel, Widget } from '@lumino/widgets';
+import { BoxPanel, Widget } from '@lumino/widgets';
 
-class LuminoQS extends Panel {
+class LuminoQS extends BoxPanel {
 
   private counterValue = 0;
 
@@ -9,17 +9,18 @@ class LuminoQS extends Panel {
 
   constructor() {
     super();
-    this.addClass('jp-quirkshop-Lumino');
+    this.addClass('jp-Quirkshop-React');
     this.id = 'simple-widget-example';
+    this.direction = 'top-to-bottom';
     this.title.label = 'Lumino Quirkshop';
     this.title.closable = true;
-    this.counter = this.createCounter()
+    this.counter = this.createCounter();
     this.addWidget(this.counter);
     this.button = this.createButton();
     this.addWidget(this.button);
   }
 
-  createButton(): Widget {
+  private createButton(): Widget {
     const node = document.createElement('div');
     const content = document.createElement('div');
     const button = document.createElement('button');
@@ -33,14 +34,13 @@ class LuminoQS extends Panel {
 
   private createCounter(): Widget {
     const node = document.createElement('div');
-    node.className = 'jp-quirkshop-LuminoCounter';
-    node.innerHTML = this.counterValue.toString();
+    node.innerHTML = 'You clicked ' + this.counterValue.toString() + ' times';
     return new Widget({node: node})
   }
 
   private increment(e:Event) {
     this.counterValue++;
-    console.log('---', this.counterValue);
+    console.log('--- LuminoQS', this.counterValue);
     this.update();
     this.onUpdateRequest
     this.layout.removeWidget(this.counter);
