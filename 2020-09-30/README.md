@@ -3,6 +3,7 @@
 Follow below steps.
 
 ```bash
+# Create your conda environment.
 conda create -y \
   -n quirkshop \
   python=3.8 \
@@ -15,6 +16,7 @@ mkdir quirkshop && \
 ```
 
 ```bash
+# Clone and build jupyterlab.
 git clone https://github.com/jupyterlab/jupyterlab \
     -b v2.2.8 \
     --depth 1 && \
@@ -25,6 +27,7 @@ git clone https://github.com/jupyterlab/jupyterlab \
 ```
 
 ```bash
+# Create an extension skeleton with a cookiecutter.
 cookiecutter \
   https://github.com/jupyterlab/extension-cookiecutter-ts \
   --config-file cookiecutter.yaml \
@@ -32,7 +35,7 @@ cookiecutter \
 ```
 
 ```bash
-# Shell 1.
+# Build the extension and link for dev.
 cd quirkshop-jlab-react && \
   yarn && \
   yarn build && \
@@ -40,7 +43,13 @@ cd quirkshop-jlab-react && \
 ```
 
 ```bash
-# Shell 2.
+# Watch the extension in shell 1.
+cd quirkshop-jlab-react && \
+  yarn watch
+```
+
+```bash
+# Run and watch jupyterlab in shell 2.
 mkdir ~/notebooks
 jlab --watch --notebook-dir=~/notebooks
 ```
