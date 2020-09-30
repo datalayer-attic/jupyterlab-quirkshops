@@ -1,0 +1,6 @@
+default_context:
+  extension_name: "quirkshop-jlab-react"
+  project_short_description: "Quirkshop JupyterLab React"
+  repository: "https://github.com/datalayer-jupyterlab/quirkshops"
+  author_name: "Your Name"
+  has_server_extension: "false"

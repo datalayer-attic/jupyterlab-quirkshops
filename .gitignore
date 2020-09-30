@@ -1,0 +1,16 @@
+# Check with git check-ignore -v **/*
+
+# Exclude.
+.*
+jupyterlab
+node_modules
+lib
+build
+tsconfig.tsbuildinfo
+*.log
+
+# Include.
+!**/.*ignore
+!**/.*rc
+!**/.*rc.js
+!**/.*config
