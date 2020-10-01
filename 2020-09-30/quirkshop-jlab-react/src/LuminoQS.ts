@@ -1,5 +1,7 @@
 import { BoxPanel, Widget } from '@lumino/widgets';
 
+import { getRandomInt } from './util';
+
 class LuminoQS extends BoxPanel {
 
   private counterValue = 0;
@@ -34,13 +36,12 @@ class LuminoQS extends BoxPanel {
 
   private createCounter(): Widget {
     const node = document.createElement('div');
-    node.innerHTML = 'You clicked ' + this.counterValue.toString() + ' times';
+    node.innerHTML = 'You earned ' + this.counterValue.toString() + '!';
     return new Widget({node: node})
   }
 
   private increment(e:Event) {
-    this.counterValue++;
-    console.log('--- LuminoQS', this.counterValue);
+    this.counterValue = this.counterValue + getRandomInt(10000);
     this.update();
     this.onUpdateRequest
     this.layout.removeWidget(this.counter);
