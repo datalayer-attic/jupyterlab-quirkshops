@@ -3,14 +3,16 @@
 Follow below steps.
 
 ```bash
+conda deactivate && \
+  conda remove -y --all -n quirkshop-jlab2
 # Create your conda environment.
 conda create -y \
-  -n quirkshop \
+  -n quirkshop-jlab2 \
   python=3.8 \
   nodejs=14.5.0 \
   yarn=1.22.5 \
   cookiecutter
-conda activate quirkshop
+conda activate quirkshop-jlab2
 ```
 
 ```bash
@@ -37,7 +39,8 @@ cookiecutter \
 cd quirkshop-jlab-react && \
   jlpm && \
   jlpm build && \
-  jupyter labextension link .
+  jupyter labextension link . && \
+  cd ..
 ```
 
 ```bash

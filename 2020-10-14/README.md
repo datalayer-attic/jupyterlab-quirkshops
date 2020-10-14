@@ -1,13 +1,27 @@
 # Jupyterlab Extensions Quirkshop - Extensions in JupyterLab 3
 
-|              | Python    | Node.js   |
+## With JupyterLab 2
+
+|              | Node.js   | Python    |
 | -------------|:---------:|:---------:|
 | Developer    |1️⃣         |2️⃣         |
-| User         |           |3️⃣         |
+| User         |3️⃣         |4️⃣         |
 
-1️⃣ Develop Server + Package all
-2️⃣ Build Frontend
-3️⃣ Install Dynamic Extensions (Default requirement for Jupyter)
+1️⃣ Build Frontend + Package
+2️⃣ Develop Server
+3️⃣ Install and Build Frontend Extensions
+4️⃣ Install and Build Server Extensions
+
+## With JupyterLab 3
+
+|              | Node.js   | Python    |
+| -------------|:---------:|:---------:|
+| Developer    |1️⃣         |2️⃣         |
+| User         |3️⃣         |          |
+
+1️⃣ Build Frontend
+2️⃣ Develop Server + Package
+3️⃣ Install Dynamic (Frontend and Server) Extensions
 
 ## Develop a JupyterLab3 Extension
 
