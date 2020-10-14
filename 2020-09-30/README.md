@@ -11,8 +11,6 @@ conda create -y \
   yarn=1.22.5 \
   cookiecutter
 conda activate quirkshop
-mkdir quirkshop && \
- cd quirkshop
 ```
 
 ```bash
@@ -37,19 +35,19 @@ cookiecutter \
 ```bash
 # Build the extension and link for dev.
 cd quirkshop-jlab-react && \
-  yarn && \
-  yarn build && \
+  jlpm && \
+  jlpm build && \
   jupyter labextension link .
 ```
 
 ```bash
 # Watch the extension in shell 1.
 cd quirkshop-jlab-react && \
-  yarn watch
+  jlpm watch
 ```
 
 ```bash
 # Run and watch jupyterlab in shell 2.
-mkdir ~/notebooks
-jlab --watch --notebook-dir=~/notebooks
+mkdir ~/notebooks && \
+  jupyter lab --watch --notebook-dir=~/notebooks
 ```
