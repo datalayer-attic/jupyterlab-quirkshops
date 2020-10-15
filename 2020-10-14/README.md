@@ -17,13 +17,13 @@
 |              | Node.js   | Python    |
 | -------------|:---------:|:---------:|
 | Developer    |1️⃣         |2️⃣         |
-| User         |3️⃣         |          |
+| User         |         |3️⃣          |
 
 1️⃣ Build Frontend
 2️⃣ Develop Server + Package
 3️⃣ Install Dynamic (Frontend and Server) Extensions
 
-## Develop a JupyterLab3 Extension
+## Develop a JupyterLab 3 Extension
 
 ```bash
 conda deactivate && \
@@ -72,7 +72,6 @@ pip list | grep quirkshop
 
 ```bash
 # Run and watch jupyterlab in shell 1.
-# jupyter labextension watch
 jlpm watch
 ```
 
@@ -94,7 +93,7 @@ twine upload dist/* -u $TWINE_USERNAME -p $TWINE_PASSWORD
 jupyter lab build
 ```
 
-## Use a JupyterLab3 Extension
+## Use a JupyterLab 3 Extension
 
 ```bash
 conda deactivate && \
@@ -117,7 +116,7 @@ jupyter lab --notebook-dir=~/notebooks/04-ipywidgets
 ```bash
 # https://pypi.org/project/jupyterlab-geojs/#history
 pip search "jupyterlab extension"
-pip search "jupyterlab3"
+pip search "JupyterLab 3"
 ```
 
 ```bash
