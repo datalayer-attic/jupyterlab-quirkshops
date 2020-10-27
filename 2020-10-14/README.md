@@ -1,29 +1,27 @@
 # Jupyterlab Extensions Quirkshop - Extensions in JupyterLab 3
 
-## With JupyterLab 2
+## Differences
 
-|              | Node.js   | Python    |
+| JupyterLab 2 | Node.js   | Python    |
 | -------------|:---------:|:---------:|
-| Developer    |1️⃣         |2️⃣         |
-| User         |3️⃣         |4️⃣         |
+| Developer    |1️⃣         |2️⃣          |
+| User         |3️⃣         |4️⃣          |
 
 1️⃣ Build Frontend + Package
 2️⃣ Develop Server
 3️⃣ Install and Build Frontend Extensions
 4️⃣ Install and Build Server Extensions
 
-## With JupyterLab 3
-
-|              | Node.js   | Python    |
+| JupyterLab 3 | Node.js   | Python    |
 | -------------|:---------:|:---------:|
-| Developer    |1️⃣         |2️⃣         |
-| User         |         |3️⃣          |
+| Developer    |1️⃣         |2️⃣          |
+| User         |           |3️⃣          |
 
 1️⃣ Build Frontend
 2️⃣ Develop Server + Package
 3️⃣ Install Dynamic (Frontend and Server) Extensions
 
-## Develop a JupyterLab 3 Extension
+## Environment
 
 ```bash
 conda deactivate && \
@@ -37,18 +35,19 @@ conda create -y \
   yarn=1.22.5 \
   cookiecutter
 conda activate quirkshop-dev
+pip install jupyter_packaging
 ```
 
 ```bash
 # Clone and build jupyterlab.
-#    -b v3.0.0rc4 \
-git clone https://github.com/jupyterlab/jupyterlab \
-    --depth 1 && \
+git clone https://github.com/jupyterlab/jupyterlab --depth 1 -b master && \
   cd jupyterlab && \
   pip install -e . && \
   jupyter lab build && \
   cd ..
 ```
+
+## Develop
 
 ```bash
 # Create an extension skeleton with a cookiecutter.
@@ -78,22 +77,27 @@ jlpm watch
 ```bash
 # Run and watch jupyterlab in shell 2.
 # Look at the remote entry javascript, a webpack5 feature.
-mkdir ~/notebooks && \
+conda activate quirkshop-dev && \
+  mkdir ~/notebooks && \
   jupyter lab --watch --notebook-dir=~/notebooks
 ```
 
+## Publish
+
 ```bash
-# Add instructions to release on PyPI and conda forge
-# - https://github.com/jupyterlab/extension-cookiecutter-ts/issues/101
-python setup.py sdist bdist_wheel
-twine upload dist/* -u $TWINE_USERNAME -p $TWINE_PASSWORD
+cd quirkshop_jlab3_react && \
+  jlpm build:lib && \
+  npm publish
 ```
 
 ```bash
-jupyter lab build
+cd quirkshop_jlab3_react && \
+  pip install -e . && \
+  python setup.py sdist bdist_wheel && \
+  twine upload dist/*
 ```
 
-## Use a JupyterLab 3 Extension
+## Use
 
 ```bash
 conda deactivate && \
@@ -101,22 +105,23 @@ conda deactivate && \
 # Create your conda environment.
 conda create -y \
   -n quirkshop-user \
-  python=3.8
+  python=3.8 \
+  nodejs=14.5.0
 conda activate quirkshop-user
-pip install --pre jupyterlab==3.0.0rc4
+pip install --pre jupyterlab==3.0.0rc6
 ```
 
 ```bash
-pip install jupyterlab_widgets==1.0.0a5
+pip install jupyterlab_widgets==1.0.0a6
 jupyter labextension list
-# Extension Manager!?
-jupyter lab --notebook-dir=~/notebooks/04-ipywidgets
+# Check the Extension Manager.
+jupyter lab --notebook-dir=~/notebooks
 ```
 
 ```bash
 # https://pypi.org/project/jupyterlab-geojs/#history
 pip search "jupyterlab extension"
-pip search "JupyterLab 3"
+pip search "JupyterLab3"
 ```
 
 ```bash

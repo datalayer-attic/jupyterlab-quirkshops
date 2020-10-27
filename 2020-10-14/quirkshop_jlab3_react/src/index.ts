@@ -36,7 +36,7 @@ const extension: JupyterFrontEndPlugin<void> = {
     ) => {
 
       console.log(
-        "%cJupyterLab extension quirkshop-jlab3-react is activated! yeah! quirkshop!",
+        "%cJupyterLab extension quirkshop-jlab4-react is activated! yeah! quirkshop!",
         "font-size:30px"
       );
 
