@@ -7,19 +7,19 @@
 | Developer    |1️⃣         |2️⃣          |
 | User         |3️⃣         |4️⃣          |
 
-1️⃣ Build Frontend + Package
-2️⃣ Develop Server
-3️⃣ Install and Build Frontend Extensions
-4️⃣ Install and Build Server Extensions
+1️⃣ Build Frontend + Package  
+2️⃣ Develop Server  
+3️⃣ Install and Build Frontend Extensions  
+4️⃣ Install and Build Server Extensions  
 
 | JupyterLab 3 | Node.js   | Python    |
 | -------------|:---------:|:---------:|
 | Developer    |1️⃣         |2️⃣          |
 | User         |           |3️⃣          |
 
-1️⃣ Build Frontend
-2️⃣ Develop Server + Package
-3️⃣ Install Dynamic (Frontend and Server) Extensions
+1️⃣ Build Frontend  
+2️⃣ Develop Server + Package  
+3️⃣ Install Dynamic (Frontend and Server) Extensions  
 
 ## Environment
 
@@ -87,7 +87,7 @@ conda activate quirkshop-dev && \
 ```bash
 cd quirkshop_jlab3_react && \
   jlpm build:lib && \
-  npm publish
+  npm publish --access public
 ```
 
 ```bash
