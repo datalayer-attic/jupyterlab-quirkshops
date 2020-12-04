@@ -79,7 +79,26 @@ jlpm watch
 # Look at the remote entry javascript, a webpack5 feature.
 conda activate quirkshop-dev && \
   mkdir ~/notebooks && \
-  jupyter lab --watch --notebook-dir=~/notebooks
+  jupyter lab \
+    --dev-mode \
+    --watch \
+    --notebook-dir=~/notebooks \
+    --ServerApp.token= \
+    --extensions-in-dev-mode
+```
+
+## Build
+
+```bash
+# Generate sourcemaps.
+jupyter labextension build --development True .
+jupyter lab build --minimize=False
+```
+
+```bash
+# Do not generate sourcemaps.
+jupyter labextension build .
+jupyter lab build
 ```
 
 ## Publish
